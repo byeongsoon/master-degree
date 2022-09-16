@@ -1,0 +1,23 @@
+server:
+  port: 9090
+
+spring:
+  application:
+    name: consumer-service
+  datasource:
+    username: root
+    password: 1234
+    url: jdbc:mysql://localhost:3307/consumer?useSSL=false&useUnicode=true&serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true
+  jpa:
+    show-sql: false
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+
+eureka:
+  instance:
+    instance-id: consumer-microservice-instance
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka

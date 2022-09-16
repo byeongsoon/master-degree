@@ -1,0 +1,23 @@
+server:
+  port : 8090
+
+spring:
+  application:
+    name: order-service
+  datasource:
+    username: root
+    password: 1234
+    url: jdbc:mysql://localhost:3306/order?useSSL=false&useUnicode=true&serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true
+  jpa:
+    show-sql: false
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+
+eureka:
+  instance:
+    instance-id: order-microservice-instance
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
